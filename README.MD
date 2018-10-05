@@ -26,59 +26,34 @@ For yarn:
 npm install -g yarn
 ```
 
-## Setting up live-server:
-```
-yarn global add live-server
-```
-
-## Setting up lite-server:
-sudo npm install -g lite-server
-
 ## Installing React dependencies/node_modules:
 In the folder where package.json is located, run:
 ```
 yarn install
 ```
 
-## Installing Babel so can write JSX:
-```
-yarn global add babel-cli@6.24.1
-```
-
-## Linux install Babel
-```
-sudo npm install -g babel-cli
-```
-
-### Excellent resource on using npm without sudo:
-https://docs.npmjs.com/getting-started/fixing-npm-permissions
-
-## Installing babel for linux:
-On linux you need to do:
-```
-sudo apt install openbabel
-```
-
-
-## Compiling  code using babel:
-```
-babel src/app.js --out-file=public/scripts/app.js --presets=env,react
-```
-This compiles the src/app.js file to the output file in public/scrips/app.js
-
 ## Watching for changes:(Leave running in background)
 ```
-babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+yarn run build 
+```
+or
+```
+npm run build
 ```
 
 ## Running the app:
 ```
-lite-server public
+yarn run serve
+
 ```
+or 
+```
+npm run serve
+```
+
 
 ## Open in browser:
 Will load page on 127.0.0.1/8080
-
 
 
 

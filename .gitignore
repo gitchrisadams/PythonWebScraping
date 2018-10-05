@@ -1,3 +1,5 @@
 reactApp/node_modules
-*.pyc
 reactApp/public/scripts/*.js
+reactApp/yarn.lock
+reactApp/.DS_Store
+*.pyc
