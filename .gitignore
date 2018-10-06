@@ -5,3 +5,4 @@ reactApp/.DS_Store
 *.pyc
 reactApp/yarn.lock
 reactApp/package-lock.json
+reactApp/public/bundle.js
