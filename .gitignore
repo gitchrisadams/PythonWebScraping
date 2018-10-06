@@ -3,3 +3,5 @@ reactApp/public/scripts/*.js
 reactApp/yarn.lock
 reactApp/.DS_Store
 *.pyc
+reactApp/yarn.lock
+reactApp/package-lock.json
