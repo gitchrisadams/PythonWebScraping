@@ -38,31 +38,36 @@ export default class FetchAPI extends React.Component {
 
 
   render() {
-    return (
-        <div className="container2">
-            <div className="container1">
-            <div className="imageGalleryDiv">
-              <ImageGallery 
-                items={this.state.data}
-                additionalClass="image-gallery-component"
-              />
-            </div>
-              { this.state && this.state.data && this.state.data[0] &&
-              <div>
-                  <h1>{this.state.data[this.state.counter].Name}</h1>
-                  <img src={this.state.data[this.state.counter].original} />
-                  <p><b>Age: </b> {this.state.data[this.state.counter]['age:']}</p>
-                  <p><b>Breed: </b> {this.state.data[this.state.counter]['breed:']}</p>
-                  <p><b>Gender: </b> {this.state.data[this.state.counter]['gender:']}</p>
-                  <p><b>Adoption Fee: </b> {this.state.data[this.state.counter]['fee:']}</p>
-                  <p><b>Last Updated: </b> {this.state.data[this.state.counter]['lastUpdated:']}</p>
-
-                  <button type="button" className="btn btn-primary" onClick={this.handleClick}>Next Doggy</button>
+    if (this.state && this.state.data && this.state.data[0] ) {
+      return (
+          <div className="container2">
+              <div className="container1">
+              <div className="imageGalleryDiv">
+                <ImageGallery 
+                  items={this.state.data}
+                  additionalClass="image-gallery-component"
+                />
               </div>
-            }
+                { this.state && this.state.data && this.state.data[0] &&
+                <div>
+                    <h1>{this.state.data[this.state.counter].Name}</h1>
+                    <img src={this.state.data[this.state.counter].original} />
+                    <p><b>Age: </b> {this.state.data[this.state.counter]['age:']}</p>
+                    <p><b>Breed: </b> {this.state.data[this.state.counter]['breed:']}</p>
+                    <p><b>Gender: </b> {this.state.data[this.state.counter]['gender:']}</p>
+                    <p><b>Adoption Fee: </b> {this.state.data[this.state.counter]['fee:']}</p>
+                    <p><b>Last Updated: </b> {this.state.data[this.state.counter]['lastUpdated:']}</p>
 
-            </div>
-        </div>
-    );
+                    <button type="button" className="btn btn-primary" onClick={this.handleClick}>Next Doggy</button>
+                </div>
+              }
+
+              </div>
+          </div>
+      );
+    }
+
+
+    return (<img src={'img/Loading_icon.gif'} />);
   }
 }
