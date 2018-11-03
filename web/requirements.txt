@@ -1,0 +1,5 @@
+Django==1.11
+beautifulsoup4
+requests
+gunicorn==19.7.0
+redis==2.10.3

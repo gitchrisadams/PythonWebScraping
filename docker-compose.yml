@@ -1,0 +1,37 @@
+version: '2'
+services:
+
+    web:
+
+        build: ./web
+        volumes:
+        - ./web:/usr/src/app
+        depends_on:
+          - redis
+          #- postgres
+        expose:
+          - "8000"
+        command: gunicorn webproject.wsgi -b 0.0.0.0:8000
+
+    redis:
+        image: sickp/alpine-redis:3.2.2
+        restart: unless-stopped
+        expose:
+            - "6379"
+        volumes:
+            - redisdata:/data
+
+    nginx:
+        restart: always
+        build: ./nginx/
+        ports:
+          - "8000:80"
+        links:
+          - web
+
+volumes:
+  #pgdata:
+  redisdata:
+
+
+
